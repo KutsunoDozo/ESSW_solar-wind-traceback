@@ -97,8 +97,8 @@ The footpoint latitude is taken as the spacecraft's Carrington latitude.
 
 WIND/SWE data courtesy of NASA/GSFC and CDAWeb. HMI data courtesy of NASA/SDO and the HMI science team via JSOC.
 
-## Author
+## Correspondence
 
-*Your name and contact / affiliation here.*
+*Kutsuno Dozo / Email: kutsunodozo@gmail.com*
 
 
