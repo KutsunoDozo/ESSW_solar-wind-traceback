@@ -37,20 +37,20 @@ The notebooks were developed and run on Google Colab with the versions below.
 ### `traceback20_v2.ipynb`
 
 1. **Data loading** - installs the packages, mounts Google Drive, and reads the WIND CSV.
-2. **CR selection** - filters WIND data to one Carrington Rotation window and saves it to `WIND_H1_5MIN_<start>_<end>.csv`. The example is CR 2138 (2013-06-11 to 2013-07-08).
+2. **CR selection** - filters WIND data to one Carrington Rotation window and saves it to another CSV file.
 3. **Coordinate transformation** - converts spacecraft position from GSE to Heliocentric Inertial (HCI) to Heliographic Carrington using `sunpy` and `astropy`.
-4. **Ballistic traceback** - computes propagation time, longitudinal offset and footpoint longitude/latitude at the source surface, and saves `wind_traceback20.csv`.
+4. **Ballistic traceback** - computes propagation time, longitudinal offset and footpoint longitude/latitude at the source surface, and saves it.
 5. **Carrington longitude lookup** - builds a longitude-vs-timestamp table (360 degrees over 27.2753 days) to find the dates matching a given longitude range.
 6. **Speed filter** - removes bad speed values (keeps 0 to 2000 km/s) before plotting.
-7. **PFSS modelling** - loads the HMI map, converts it to a CEA projection, resamples it to 360 x 180, cleans NaNs, and runs `pfsspy.pfss` with `nrho = 35` and `rss = 2.5`.
-8. **`pfss2flines()`** - helper function that traces field lines on a regular grid, from the photosphere or from the source surface, and returns the output used for the coronal hole map.
+7. **PFSS modelling** - loads the HMI map, converts it to a CEA projection, resamples it to 360 x 180, cleans NaNs, and runs it. 
+8. **`pfss2flines()`** - helper function that traces field lines on a regular grid, from the source surface, and returns the output used for the coronal hole map.
 9. **`source_surface_seeds()`** - helper function that builds a 92 x 41 grid of seed points on the source surface; field lines traced from it give the footpoints plotted on the HMI map.
 10. **Plotting** - speed vs. footpoint longitude, HMI and source-surface Br maps with polarity inversion lines, the coronal hole map, and a combined figure of speed vs. longitude over the HMI map with polarity-coloured footpoints.
 
 ### `pfss_3d_v1.ipynb`
 
 1. **JSOC download** - searches and fetches the HMI synoptic map (`hmi.synoptic_mr_polfil_720s`, CR 2138) with `Fido`.
-2. **PFSS modelling** - same pipeline as above, with a finer radial grid (`nrho = 60`, `rss = 2.5`).
+2. **PFSS modelling** - same pipeline as the above.
 3. **`pfss2flines()`** - traces closed field lines (from the photosphere) and open field lines (from the source surface) on a 36 x 72 grid.
 4. **`sph2orthographic()`** - projects (r, lon, lat) points onto the plane of the sky as seen from a chosen central meridian longitude (CMP) and the solar B0 angle, keeping only visible points.
 5. **`plot_pfss_orthographic()`** - draws a lat/lon grid, the magnetic neutral line, and the field lines coloured by polarity, with circles for the photosphere and the source surface.
