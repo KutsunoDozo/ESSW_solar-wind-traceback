@@ -1,5 +1,5 @@
 ## Extremely Slow Solar Wind (ESSW) traceback: Mapping L1 in-situ observations to 2.5 R_s
-Traces in-situ ESSW events from WIND spacecraft measurements at the L1 point to their solar source regions at 2.5 R_S using a constant-velocity traceback method together with the PFSS (Potential Field Source Surface) model built from SDO/HMI synoptic magnetograms. A second notebook renders the PFSS field lines and the magnetic neutral line in a 3D (orthographic) view over HMI full-disk magnetograms. The notebook is set up with one example event on 17-19 June 2013 in Carrington Rotation 2138, but the dates and inputs can be changed to trace any event. 
+Traces in-situ ESSW events from WIND spacecraft measurements at the L1 point to their solar source regions at 2.5 R_S using a constant-velocity traceback method together with the PFSS (Potential Field Source Surface) model built from SDO/HMI synoptic magnetograms. A second notebook renders the PFSS field lines and the magnetic neutral line in a 3D (orthographic) view over HMI full-disk magnetograms. The notebook is set up with one example event on 27 January 2025 (18 hrs) in Carrington Rotation 2293, but the dates and inputs can be changed to trace any event. 
 
 ## Python Dependencies
 
@@ -49,12 +49,12 @@ The notebooks were developed and run on Google Colab with the versions below.
 
 ### `pfss_3d_v2.ipynb`
 
-1. **JSOC download** - searches and fetches the HMI synoptic map (`hmi.synoptic_mr_polfil_720s`, CR 2138) with `Fido`.
+1. **JSOC download** - searches and fetches the HMI synoptic map (`hmi.synoptic_mr_polfil_720s`, CR 2293) with `Fido`.
 2. **PFSS modelling** - same pipeline as the above.
 3. **`pfss2flines()`** - traces closed field lines (from the photosphere) and open field lines (from the source surface) on a 36 x 72 grid.
 4. **`sph2orthographic()`** - projects (r, lon, lat) points onto the plane of the sky as seen from a chosen central meridian longitude (CMP) and the solar B0 angle, keeping only visible points.
 5. **`plot_pfss_orthographic()`** - draws a lat/lon grid, the magnetic neutral line, and the field lines coloured by polarity, with circles for the photosphere and the source surface.
-6. **`plot_pfss_orthographic_with_hmi()`** - the same view with an HMI full-disk magnetogram (`hmi.m_45s`) as the photospheric background. The example makes one plot at each end of the event, at CMP 351° and 331°.
+6. **`plot_pfss_orthographic_with_hmi()`** - the same view with an HMI full-disk magnetogram (`hmi.m_45s`) as the photospheric background. The example makes one plot at each end of the event, at CMP 159° and 149°.
 
 ## Method
 
@@ -66,7 +66,7 @@ For each WIND measurement, the travel time from the source surface to the spacec
 Δt = (r_spacecraft − R_ss) / v_sw
 ```
 
-where `R_ss = 2.5 R☉` and `v_sw` is the measured bulk speed. During that time the Sun rotates, so the longitudinal offset is
+where `R_ss = 2.5 R☉` and `v_sw` is the measured bulk speed. During that time, the Sun rotates, so the longitudinal offset is
 
 ```
 D = Ω · Δt,   Ω = 360° / (27.2753 days)
