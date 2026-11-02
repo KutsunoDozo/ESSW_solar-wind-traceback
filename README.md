@@ -21,9 +21,9 @@ The notebooks were developed and run on Google Colab with the versions below.
 
 ## Data
 
-1. WIND/SWE H1 solar wind measurements: available online at https://cdaweb.gsfc.nasa.gov/ (dataset `WI_H1_SWE`).
+1. WIND/SWE H1 solar wind measurements: available online at https://cdaweb.gsfc.nasa.gov/.
 2. SDO/HMI synoptic Carrington maps: available online at http://jsoc.stanford.edu/.
-3. SDO/HMI full-disk line-of-sight magnetograms (`hmi.m_45s`): available online at http://jsoc.stanford.edu/.
+3. SDO/HMI full-disk line-of-sight magnetograms: available online at http://jsoc.stanford.edu/.
 
 
 ## Code Structure
