@@ -1,4 +1,4 @@
-**Extremely Slow Solar Wind (ESSW) traceback: Mapping L1 in-situ observations to 2.5 R_s**
+## Extremely Slow Solar Wind (ESSW) traceback: Mapping L1 in-situ observations to 2.5 R_s
 Traces in-situ ESSW events from WIND spacecraft measurements at the L1 point to their solar source regions at 2.5 R_S using a constant-velocity traceback method together with the PFSS (Potential Field Source Surface) model built from SDO/HMI synoptic magnetograms. A second notebook renders the PFSS field lines and the magnetic neutral line in a 3D (orthographic) view over HMI full-disk magnetograms. The notebook is set up with one example event on 17-19 June 2013 in Carrington Rotation 2138, but the dates and inputs can be changed to trace any event. 
 
 ## Python Dependencies
